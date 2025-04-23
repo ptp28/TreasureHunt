@@ -9,6 +9,7 @@ import LoginBody from '../body/LoginBody.tsx';
 import SettingsBody from '../body/SettingsBody.tsx';
 import { Route, Routes } from 'react-router-dom';
 import ProfileBody from '../body/ProfileBody.tsx';
+import RegisterBody from '../body/RegisterBody.tsx';
 import { useAuth } from '../../../services/AuthenticationProvider.tsx';
 
 interface NavigationAreaProps {
@@ -37,6 +38,7 @@ export default function NavigationArea(props: NavigationAreaProps): JSX.Element 
                     <Route path="/profile" element={<ProfileBody />} />
                     <Route path="/logout" element={<LogoutBody />} />
                     <Route path="/login" element={<LoginBody />} />
+                    <Route path="/register" element={<RegisterBody />} />
                     <Route path="/settings" element={<SettingsBody />} />
                 </Routes>
             </Box>

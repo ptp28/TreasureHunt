@@ -1,10 +1,10 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
-import { useAppState } from '../client/context';
+import { useAppState } from '../scripts/context';
 
 interface AuthContextType {
     token: string | null;
     isAuthenticated: boolean;
-    login: (username: string, token: string) => void;
+    login: (email: string, token: string) => void;
     logout: () => void;
 }
 
@@ -19,17 +19,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return localStorage.getItem(TOKEN_STORAGE_KEY);
     });
 
-    const login = useCallback((username: string, token: string) => {
+    const login = useCallback((email: string, token: string) => {
         localStorage.setItem(TOKEN_STORAGE_KEY, token);
-        dispatch({ type: 'SET_USERNAME', payload: username });
+        dispatch({ type: 'SET_USER_EMAIL', payload: email });
         setToken(token);
-    }, []);
+    }, [dispatch]);
 
     const logout = useCallback(() => {
         localStorage.removeItem(TOKEN_STORAGE_KEY);
-        dispatch({ type: 'SET_USERNAME', payload: null });
+        dispatch({ type: 'SET_USER_EMAIL', payload: null });
         setToken(null);
-    }, []);
+    }, [dispatch]);
 
     const value = {
         token,

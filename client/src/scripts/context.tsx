@@ -4,12 +4,12 @@ import {Action} from "./actions.tsx";
 
 type AppState = {
     darkMode: boolean;
-    username: string | null;
+    userEmail: string | null;
 };
 
 const initialState = {
     darkMode: false,
-    username: null,
+    userEmail: null,
 };
 
 const reducer = (state: AppState, action: Action): AppState => {
@@ -19,10 +19,10 @@ const reducer = (state: AppState, action: Action): AppState => {
                 ...state,
                 darkMode: action.payload,
             };
-        case "SET_USERNAME":
+        case "SET_USER_EMAIL":
             return {
                 ...state,
-                username: action.payload,
+                userEmail: action.payload,
             };
         default:
             return state;
