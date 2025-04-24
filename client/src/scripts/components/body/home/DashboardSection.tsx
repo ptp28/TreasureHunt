@@ -93,7 +93,7 @@ export default function HomeBody() {
                                 Settings
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                Change settings.
+                                Change settings. Customize your experience and manage your account preferences.
                             </Typography>
                         </CardContent>
                     </CardActionArea>

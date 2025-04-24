@@ -1,7 +1,8 @@
-import {Box, Button, Card, Stack, Typography} from "@mui/material";
+import {Box, Card, Link, Stack, Typography} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { useNavigate } from "react-router-dom";
-import AboutImage from "../../../../assets/quest.svg";
+import ContactUsImage from "../../../../assets/contact_us.svg";
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function AboutSection() {
 
@@ -25,23 +26,28 @@ export default function AboutSection() {
                     <Grid size={{xs: 12, sm: 9}} order={{xs: 2, sm: 1}}>
                         <Stack>
                             <Typography variant="h5" sx={{fontWeight: 'bold'}} gutterBottom>
-                                Welcome to the TreasureQuest!
+                                Contact Us
                             </Typography>
                             <Typography variant="body1" gutterBottom>
-                                Embark on an exciting scavenger hunt adventure through historic sites and hidden gems.
+                                If you have any questions, feedback, or need assistance, feel free to reach out to us.
                             </Typography>
-                            <Typography variant="body1" gutterBottom>
-                                Play the game, explore the sights, and experience the city in a whole new way!
+                            <Typography variant="body1">
+                                <Stack direction={"row"} alignItems="center" spacing={1}>
+                                    <EmailIcon />
+                                    <Typography variant="body1" gutterBottom>
+                                    Email: 
+                                    </Typography>
+                                    <Link href="mailto:treasurehunt@email.com">
+                                        treasurehunt@email.com
+                                    </Link>
+                                </Stack>
                             </Typography>
-                            <Button variant="contained" onClick={goToLogin} color="primary" sx={{marginTop: '10px'}}>
-                                Start Your Adventure
-                            </Button>
                         </Stack>
                     </Grid>
                     <Grid size={{xs: 12, sm: 3}} order={{xs: 1, sm: 2}}>
                         <Box
-                            src={AboutImage} 
-                            alt="Adventure Map" 
+                            src={ContactUsImage} 
+                            alt="Contact Us" 
                             component="img"
                             sx={{
                                 marginLeft: 'auto',

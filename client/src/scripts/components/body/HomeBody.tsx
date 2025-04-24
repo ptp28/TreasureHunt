@@ -5,6 +5,7 @@ import FAQSection from "./home/FAQSection.tsx";
 import HomeIcon from '@mui/icons-material/Home';
 import DashboardSection from "./home/DashboardSection.tsx";
 import { useAuth } from "../../../services/AuthenticationProvider.tsx";
+import ContactSection from "./home/ContactSection.tsx";
 
 export default function HomeBody() {
 
@@ -25,6 +26,7 @@ export default function HomeBody() {
                     <AboutSection />
                     <PricingSection />
                     <FAQSection />
+                    <ContactSection />
                 </>
             </Body>
         );
