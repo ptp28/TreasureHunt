@@ -23,7 +23,7 @@ export default function ProfileBody() {
         .then(response => response.json())
         .then(data => data['username'])
         .then(username => {
-            fetch(`api/user_info/${username}`)
+            fetch(`api/user_info/${encodeURIComponent(username)}/`)
             .then(response => response.json())
             .then(data => {
                 setName(data['first_name'] + " " + data['last_name']);

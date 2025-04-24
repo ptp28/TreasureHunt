@@ -24,7 +24,7 @@ export default function PricingSection() {
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
                                 display: 'block',
-                                width: '80%',
+                                width: '100%',
                                 objectFit: 'fill',
                             }}
                         />
@@ -41,9 +41,6 @@ export default function PricingSection() {
                                 Our goal is simple — for you to have FUN!
                                 If you're not satisfied or need to cancel, just reach out for a full refund.
                             </Typography>
-                            <Button variant="outlined" color="primary" sx={{marginTop: '10px'}}>
-                                Contact Us
-                            </Button>
                         </Stack>
                     </Grid>
                 </Grid>

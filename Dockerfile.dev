@@ -1,0 +1,14 @@
+# Use Node.js for client
+FROM node:22 AS client
+WORKDIR /app/client
+COPY client/package*.json ./
+RUN npm install
+CMD ["npm", "run", "dev"]
+
+# Use Python for Django server
+FROM python:3.12 AS server
+WORKDIR /app/server
+COPY server/requirements.txt .
+RUN pip install -r requirements.txt
+ENV PYTHONUNBUFFERED=1
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

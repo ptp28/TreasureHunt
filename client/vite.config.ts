@@ -6,9 +6,15 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   server: {
+    host: true,
+    port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: process.env.SERVER_URL ?? 'http://localhost:8000',
+        changeOrigin: true,
+      },
+      '/admin': {
+        target: process.env.SERVER_URL ?? 'http://localhost:8000',
         changeOrigin: true,
       }
     }

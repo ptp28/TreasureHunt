@@ -8,7 +8,6 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import render
 
 def home(request):
-    print("Rendering home page")
     return render(request, 'index.html')
 
 @api_view(['POST'])

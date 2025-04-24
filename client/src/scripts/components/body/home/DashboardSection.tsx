@@ -23,8 +23,8 @@ export default function HomeBody() {
     }
 
     return (
-        <Grid container spacing={3} sx={{ alignItems: 'stretch', marginX: '50px' }}>
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
+        <Grid container spacing={3} sx={{ alignItems: 'stretch', marginX: {xs: 1, sm: 8} }}>
+            <Grid size={{ xs: 12, sm: 12, lg: 6 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <CardActionArea onClick={goToQuiz}>
                         <CardMedia
@@ -37,7 +37,7 @@ export default function HomeBody() {
                             image={AdventureImage}
                         />
                         <CardContent sx={{ flexGrow: 1 }}>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" sx={{textDecoration: 'underline', textUnderlineOffset: '4px'}}>
                                 Start Quest
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -50,7 +50,7 @@ export default function HomeBody() {
                 </Card>
             </Grid>
             {/* ------------------ */}
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
+            <Grid size={{ xs: 12, sm: 6, lg: 3 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <CardActionArea onClick={goToProfile}>
                         <CardMedia
@@ -63,7 +63,7 @@ export default function HomeBody() {
                             image={ProfileImage}
                         />
                         <CardContent style={{ flexGrow: 1 }}>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" sx={{textDecoration: 'underline', textUnderlineOffset: '4px'}}>
                                 Profile
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -76,7 +76,7 @@ export default function HomeBody() {
                 </Card>
             </Grid>
             {/* ------------------ */}
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
+            <Grid size={{ xs: 12, sm: 6, lg: 3 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <CardActionArea onClick={goToSettings}>
                         <CardMedia
@@ -89,11 +89,11 @@ export default function HomeBody() {
                             image={SettingsImage}
                         />
                         <CardContent sx={{ flexGrow: 1 }}>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" sx={{textDecoration: 'underline', textUnderlineOffset: '4px'}}>
                                 Settings
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                Change settings.
+                                Change settings. Customize your experience and manage your account preferences.
                             </Typography>
                         </CardContent>
                     </CardActionArea>

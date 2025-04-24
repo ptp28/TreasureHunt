@@ -26,7 +26,17 @@ SECRET_KEY = 'django-insecure-&a-n)(j7*@55%^tl&+p7lm401kd8^*cm+$c23v-(64m&oj#zkb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+if DEBUG:
+    ALLOWED_HOSTS = ['server', 'localhost']
+else:
+    ALLOWED_HOSTS = []
+
+# CSRF settings
+if DEBUG:
+    CSRF_COOKIES_SECURE = False
+    CSRF_TRUSTED_ORIGINS = ['http://server:8000', 'https://server:8000', 'http://localhost:5173', 'https://localhost:5173']
+else:
+    CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 
@@ -44,11 +54,14 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'treasure_hunt.middleware.EmailToUsernameMiddleware',
+    'treasure_hunt.middleware.SplitNameWhileRegistrationMiddleware',
 ]
 
 ROOT_URLCONF = 'treasure_hunt.urls'
