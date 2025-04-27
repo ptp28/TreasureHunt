@@ -16,6 +16,14 @@ export default defineConfig({
       '/admin': {
         target: process.env.SERVER_URL ?? 'http://localhost:8000',
         changeOrigin: true,
+      },
+      '/media': {
+        target: process.env.SERVER_URL ?? 'http://localhost:8000',
+        changeOrigin: true,
+      },
+      '/assets': {
+        target: process.env.SERVER_URL ?? 'http://localhost:8000',
+        changeOrigin: true,
       }
     }
   },

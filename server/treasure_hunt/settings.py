@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-&a-n)(j7*@55%^tl&+p7lm401kd8^*cm+$c23v-(64m&oj#zkb
 DEBUG = True
 
 if DEBUG:
-    ALLOWED_HOSTS = ['server', 'localhost']
+    ALLOWED_HOSTS = ['server', 'localhost', '127.0.0.1']
+    CORS_ALLOW_ALL_ORIGINS = True
+    CORS_ALLOW_CREDENTIALS = True
 else:
     ALLOWED_HOSTS = []
 
@@ -49,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'treasure_hunt',
+    'quests',
 ]
 
 MIDDLEWARE = [
@@ -73,9 +77,11 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -129,11 +135,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'assets/'
+STATIC_URL = '/assets/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, '../client/dist/assets')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -145,3 +156,12 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+# Security settings for development
+if DEBUG:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
+    CORS_EXPOSE_HEADERS = ["Content-Type", "X-CSRFToken"]
+    CORS_ALLOW_CREDENTIALS = True
