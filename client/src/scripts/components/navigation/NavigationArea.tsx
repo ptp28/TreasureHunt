@@ -12,6 +12,7 @@ import ProfileBody from '../body/ProfileBody.tsx';
 import RegisterBody from '../body/RegisterBody.tsx';
 import { useAuth } from '../../../services/AuthenticationProvider.tsx';
 import ProtectedRoute from './ProtectedRoute.tsx';
+import QuestSelectionBody from '../body/QuestSelectionBody.tsx';
 
 interface NavigationAreaProps {
     title: string;
@@ -35,7 +36,12 @@ export default function NavigationArea(props: NavigationAreaProps): JSX.Element 
             >
                 <Routes>
                     <Route path="/" element={<HomeBody />} />
-                    <Route path="/quiz" element={
+                    <Route path="/quest/selection" element={
+                        <ProtectedRoute>
+                            <QuestSelectionBody />
+                        </ProtectedRoute>
+                    } />
+                    <Route path="/quest/quiz/:quiz_id" element={
                         <ProtectedRoute>
                             <QuizBody />
                         </ProtectedRoute>

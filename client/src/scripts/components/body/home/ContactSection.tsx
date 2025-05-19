@@ -1,16 +1,9 @@
 import {Box, Card, Link, Stack, Typography} from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { useNavigate } from "react-router-dom";
 import ContactUsImage from "../../../../assets/contact_us.svg";
 import EmailIcon from '@mui/icons-material/Email';
 
 export default function AboutSection() {
-
-    const navigate = useNavigate();
-    
-    const goToLogin = () => {
-        navigate('/login');
-    };
 
     return (
         <Box>
@@ -31,17 +24,15 @@ export default function AboutSection() {
                             <Typography variant="body1" gutterBottom>
                                 If you have any questions, feedback, or need assistance, feel free to reach out to us.
                             </Typography>
-                            <Typography variant="body1">
-                                <Stack direction={"row"} alignItems="center" spacing={1}>
-                                    <EmailIcon />
-                                    <Typography variant="body1" gutterBottom>
-                                    Email: 
-                                    </Typography>
-                                    <Link href="mailto:treasurehunt@email.com">
-                                        treasurehunt@email.com
-                                    </Link>
-                                </Stack>
-                            </Typography>
+                            <Stack direction={"row"} alignItems="center" spacing={1}>
+                                <EmailIcon />
+                                <Typography variant="body1" gutterBottom>
+                                Email: 
+                                </Typography>
+                                <Link href="mailto:treasurehunt@email.com">
+                                    treasurehunt@email.com
+                                </Link>
+                            </Stack>
                         </Stack>
                     </Grid>
                     <Grid size={{xs: 12, sm: 3}} order={{xs: 1, sm: 2}}>

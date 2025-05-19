@@ -6,6 +6,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import DashboardSection from "./home/DashboardSection.tsx";
 import { useAuth } from "../../../services/AuthenticationProvider.tsx";
 import ContactSection from "./home/ContactSection.tsx";
+import QuestListSection from "./home/QuestListSection.tsx";
 
 export default function HomeBody() {
 
@@ -21,10 +22,11 @@ export default function HomeBody() {
 
     if (!isAuthenticated) {
         return (
-            <Body icon={<></>} title={''}>
+            <Body title={''}>
                 <>
                     <AboutSection />
                     <PricingSection />
+                    <QuestListSection />
                     <FAQSection />
                     <ContactSection />
                 </>

@@ -9,12 +9,13 @@ import questionService from "../../../services/FileQuestionProvider.ts";
 import {QuestionDataType} from "../../../services/QuestionDataType.ts";
 import FeedbackSection from "./quiz/FeedbackSection.tsx";
 import QuizCompleteSection from "./quiz/QuizCompleteSection.tsx";
+import { useParams } from "react-router-dom";
 
 
 export default function QuizBody() {
 
     const title = "QUIZ";
-
+    const { quiz_id } = useParams();
     const [isError, setIsError] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isFinished, setIsFinished] = useState<boolean>(false);

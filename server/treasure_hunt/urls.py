@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import include, path, re_path
 from django.conf.urls.static import static
 from django.views.static import serve
 from . import views
@@ -28,6 +28,7 @@ from rest_framework_simplejwt.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/quests/', include('quests.urls')),
     path('api/register/', views.register_user, name='user-register'),
     path("api/user_info/<str:username>/", views.user_info, name="user_info"),
     path("api/get_username/", views.get_username, name="get_username"),

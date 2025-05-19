@@ -1,4 +1,4 @@
-import {Box, Button, Card, Stack, Typography} from "@mui/material";
+import {Box, Card, Stack, Typography} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import PaymentImage from "../../../../assets/online_payment.svg";
 

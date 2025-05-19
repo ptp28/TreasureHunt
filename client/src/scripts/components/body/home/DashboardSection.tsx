@@ -10,8 +10,8 @@ export default function HomeBody() {
 
     const navigate = useNavigate();
 
-    const goToQuiz = () => {
-        navigate('/quiz');
+    const goToQuestSelection = () => {
+        navigate('/quest/selection');
     }
 
     const goToProfile = () => {
@@ -26,7 +26,7 @@ export default function HomeBody() {
         <Grid container spacing={3} sx={{ alignItems: 'stretch', marginX: {xs: 1, sm: 8} }}>
             <Grid size={{ xs: 12, sm: 12, lg: 6 }} sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', height: 'auto' }}>
                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardActionArea onClick={goToQuiz}>
+                    <CardActionArea onClick={goToQuestSelection}>
                         <CardMedia
                             component="img"
                             width="100%"
